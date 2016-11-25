@@ -33,7 +33,7 @@ existing <- list.files("..\\wetlandAPP\\data", pattern = glob2rx("dfb5*"))
 
 baseData <- read.csv(paste("..\\wetlandAPP\\data", existing, sep = "\\"),
                      header = TRUE, stringsAsFactors = FALSE)
-baseData$date <- as.Date(baseData$date, "%d/%m/%Y")
+baseData$date <- as.Date(baseData$date)
 
 newBase <- baseData
 
