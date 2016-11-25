@@ -2,7 +2,12 @@
 # Script to amalgamate newly extracted data to the band 5 data frame for the 
 # wetlandAPP (wetland depth modelling app)
 #
+# Takes extracted b5 data for new wetlands and adds to existing dfb5 data for
+# the APP.
 # 
+# Filepaths are relative so may need adjusting if you change folder structure or
+# location.
+#
 # By Bart Huntley
 # 25/11/2016
 
