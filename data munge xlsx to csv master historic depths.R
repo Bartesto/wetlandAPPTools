@@ -43,6 +43,7 @@ resdf2 <- resdf[!ind,]
 
 outdf <- resdf2%>%
   spread(Code, Depth..m.)%>%
+  rename(DATE = date)%>%
   arrange(Date)
 
 sum(duplicated(outdf$Date)) # just checking!
