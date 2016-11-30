@@ -23,6 +23,7 @@ load_or_install(c("tidyverse", "lubridate"))
 existing <- list.files(locOld, pattern = "dfb5*")
 existdf <- read.csv(paste0(locOld, "/", existing), header = TRUE,
                      stringsAsFactors = FALSE)
+existdf$date <- parse_date_time(existdf$date, orders = c("dmY", "Ymd"))
 
 # Make long and get rid of NA's
 existdfl <- existdf%>%
