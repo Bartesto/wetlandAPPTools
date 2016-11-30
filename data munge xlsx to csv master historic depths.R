@@ -47,5 +47,6 @@ outdf <- resdf2%>%
 
 sum(duplicated(outdf$Date)) # just checking!
 
-write.csv(outdf, file = paste0("dfhist_as_at_", Sys.Date(), ".csv"))
+write.csv(outdf, file = paste0("dfhist_as_at_", Sys.Date(), ".csv"), 
+          row.names = FALSE)
 
