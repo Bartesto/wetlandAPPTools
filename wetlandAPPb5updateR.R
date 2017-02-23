@@ -23,13 +23,12 @@ load_or_install(c("tidyverse", "lubridate"))
 existing <- list.files(locOld, pattern = "dfb5*")
 existdf <- read.csv(paste0(locOld, "/", existing), header = TRUE,
                      stringsAsFactors = FALSE)
-existdf$date <- parse_date_time(existdf$date, orders = c("dmY", "Ymd"))
+existdf$DATE <- parse_date_time(existdf$DATE, orders = c("dmY", "Ymd"))
 
 # Make long and get rid of NA's
 existdfl <- existdf%>%
   gather("WLAND", "B5", 2:length(names(existdf)))%>%
-  filter(!is.na(B5))%>%
-  rename(DATE = date)
+  filter(!is.na(B5))
 
 
 toDo <- list.files(locNew)
